@@ -10,7 +10,7 @@ func main() {
 	adminPort := flag.String("adminport", "8180", "port for create/update/delete mock api")
 	workingPort := flag.String("workingport", "8080", "port exposed to users")
 	flag.Parse()
-	house, e := api.NewApiHouse("test")
+	house, e := api.NewApiHouse("shawn")
 	if nil != e {
 		panic(e)
 	}
