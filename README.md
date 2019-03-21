@@ -28,7 +28,11 @@ http://localhost:8180/admin/mock/add.json
 	"Status":200
 }
 ```
-
+* mock api
+```
+GET http://localhost:8080/1
+response: {"key":"value"}
+```
 * delete api
 ```
 http://localhost:8180/admin/mock/del/{ApiName}/{RequestType}
@@ -37,6 +41,9 @@ http://localhost:8180/admin/mock/del/{ApiName}/{RequestType}
 ```
 http://localhost:8180/admin/mock/get
 ```
-
+* pprof
+```
+http://localhost:8180/debug
+```
 ## todo
 - status code not working
