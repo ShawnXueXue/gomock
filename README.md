@@ -44,6 +44,7 @@ http://localhost:8180/admin/mock/get
 * pprof
 ```
 http://localhost:8180/debug
+go tool pprof http://localhost:8180/debug/pprof/{heap/goroutine/...}
 ```
 ## todo
 - status code not working
