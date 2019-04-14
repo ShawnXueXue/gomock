@@ -79,7 +79,6 @@ func (ah *ApiHouse) AddApi(api Api) error {
 		if iris.MethodNone == route.Method {
 			route.RestoreStatus()
 		}
-		// TODO not sure if it is safe
 		route.Handlers[len(route.Handlers)-1] = handlerFunc(api)
 	} else {
 		ah.aServer.Handle(api.RequestType, api.ApiName, record, handlerFunc(api))
@@ -136,8 +135,9 @@ func record(ctx context.Context) {
 }
 func handlerFunc(api Api) context.Handler {
 	return func(ctx iris.Context) {
-		ctx.JSON(api.Response)
-		// TODO response status is not working
+		// should before .Write
 		ctx.StatusCode(api.Status)
+		// .Write
+		ctx.JSON(api.Response)
 	}
 }
